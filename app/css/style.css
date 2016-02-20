@@ -1,0 +1,9 @@
+body {
+  width: 1024px;
+  margin: auto;
+}
+
+.form-control {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

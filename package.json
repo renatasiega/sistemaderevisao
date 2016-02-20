@@ -1,0 +1,21 @@
+{
+  "name": "sistemaderevisao-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "angular": "^1.5.0-rc.0",
+    "body-parser": "^1.13.3",
+    "bootstrap": "^3.3.6",
+    "ejs": "^2.3.3",
+    "express": "*",
+    "gulp": "^3.9.0",
+    "gulp-express": "^0.3.5",
+    "jade": "*",
+    "response-time": "^2.3.1",
+    "swig": "~0.14.0",
+    "validator": "~1.1.3"
+  }
+}
