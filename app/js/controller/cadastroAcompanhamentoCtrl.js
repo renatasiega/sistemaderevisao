@@ -5,7 +5,8 @@ angular.module("sistemDeRevisao").controller("cadastroAcompanhamentoCtrl", funct
   $scope.acompanhamentos = [];
 
   $scope.acompanhamento = {
-    periodos: [6, 12, 24, 36, 48, 60, 72]
+    periodos: [6, 12, 24, 36, 48, 60, 72],
+    dataCompra: new Date()
   };
 
   $scope.cadastrarAcompanhamento = function (acompanhamento) {

@@ -9,6 +9,7 @@
     "angular": "^1.5.0-rc.0",
     "body-parser": "^1.13.3",
     "bootstrap": "^3.3.6",
+    "checklist-model": "^0.9.0",
     "ejs": "^2.3.3",
     "express": "*",
     "gulp": "^3.9.0",
