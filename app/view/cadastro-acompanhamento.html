@@ -2,12 +2,18 @@
 
   <h2> Cadastrar acompanhamento </h2>
 
-  <form novalidate class="form-horizontal" role="form">
+  <form name="acompanhamentoForm" class="form-horizontal" role="form">
 
     <div class="form-group">
       <div class="col-sm-12">
-        <input class="form-control" placeholder="Modelo" ng-model="acompanhamento.modelo" type="text"></input>
-        <input class="form-control" placeholder="Placa" ng-model="acompanhamento.placa" type="text"></input>
+        <input name="modelo" ng-model-options="{updateOn: 'default blur'}" class="form-control" placeholder="Modelo" ng-model="acompanhamento.modelo" type="text" required="true">
+          <span ng-show="acompanhamentoForm.modelo.$dirty && acompanhamentoForm.modelo.$error.required" style="color: red">O campo modelo deve ser preenchido</span>
+        </input>
+        <input name="placa" ng-model-options="{updateOn: 'default blur'}" class="form-control" placeholder="Placa" ng-model="acompanhamento.placa" type="text" required="true" ng-pattern="/^[A-Z]{3}[0-9]{4}$/">
+          <span ng-show="acompanhamentoForm.placa.$dirty && acompanhamentoForm.placa.$error.required" style="color: red">O campo placa deve ser preenchido</span>
+          <span ng-show="acompanhamentoForm.placa.$invalid && acompanhamentoForm.placa.$dirty && !acompanhamentoForm.placa.$error.required" style="color: red">A placa deve ser no formato AAAA0000</span>
+        </input>
+
         <autocomplete autocompleteRequired="true" ng-model="cliente" data="clientes" on-select="selecionarCliente">
 
         </autocomplete>

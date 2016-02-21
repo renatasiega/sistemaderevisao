@@ -15,7 +15,7 @@
       			<input class="form-control" type="text" ng-model="cliente.telefone"
             ng-model-options="{updateOn: 'default blur'}" name="telefone"
             placeholder="Telefone" ng-required="true" ng-pattern="/^[0-9]{4}-[0-9]{4}$/" >
-      				<span ng-show="clienteForm.telefone.$invalid && clienteForm.telefone.$dirty && !clienteForm.telefone.$error.required" style="color: red">O telefone deve ser no formato XXXX-XXXX</span>
+      				<span ng-show="clienteForm.telefone.$invalid && clienteForm.telefone.$dirty && !clienteForm.telefone.$error.required" style="color: red">O telefone deve ser no formato 0000-0000</span>
               <span ng-show="clienteForm.telefone.$dirty && clienteForm.telefone.$error.required" style="color: red">O campo telefone deve ser preenchido</span>
             </input>
       		</div>

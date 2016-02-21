@@ -1,12 +1,8 @@
 angular.module("sistemDeRevisao").controller("clientesCtrl", function ($scope, $location, clienteService){
+
   $scope.clientes = clienteService.getAll();
 
-  $scope.ordernarPor = function (campo) {
-    $scope.criterioDeOrdenacao = campo;
-    $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
-  };
-
-  $scope.cancelar = function (){
+  $scope.voltar = function (){
     $location.path("/");
   }
 
