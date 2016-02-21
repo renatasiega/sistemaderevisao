@@ -2,6 +2,7 @@ angular.module("sistemDeRevisao").config(function($routeProvider){
 
   $routeProvider.when("/", {
     templateUrl: "view/main.html",
+    controller: "acompanhamentosCtrl"
   });
 
   $routeProvider.when("/clientes", {

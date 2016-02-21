@@ -107,10 +107,10 @@ app.directive('autocomplete', function() {
 
       // Default atts
       scope.attrs = {
-        "placeholder": "start typing...",
+        "placeholder": "Buscar nome do cliente ...",
         "class": "",
         "id": "",
-        "inputclass": "",
+        "inputclass": "form-control",
         "inputid": ""
       };
 
@@ -254,10 +254,10 @@ app.directive('autocomplete', function() {
               suggestion\
               ng-repeat="suggestion in suggestions | filter:searchFilter | orderBy:\'toString()\' track by $index"\
               index="{{ $index }}"\
-              val="{{ suggestion }}"\
+              val="{{ suggestion}}"\
               ng-class="{ active: ($index === selectedIndex) }"\
               ng-click="select(suggestion)"\
-              ng-bind-html="suggestion | highlight:searchParam"></li>\
+              ng-bind-html="suggestion| highlight:searchParam"></li>\
           </ul>\
         </div>'
   };

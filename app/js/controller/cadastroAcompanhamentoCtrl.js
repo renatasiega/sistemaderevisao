@@ -16,8 +16,12 @@ angular.module("sistemDeRevisao").controller("cadastroAcompanhamentoCtrl", funct
     $location.path("/");
   };
 
-  $scope.handleOnselect = function(selected){
-    console.log($scope.map.get(selected));
+  $scope.selecionarCliente = function(cliente){
+    $scope.acompanhamento.cliente = $scope.map.get(cliente);
+  }
+
+  $scope.cancelar = function (){
+    $location.path("/");
   }
 
   function toString(clientesJson){

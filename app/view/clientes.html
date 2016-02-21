@@ -1,0 +1,25 @@
+<div ng-controller="clientesCtrl">
+<h2> Lista de clientes </h2>
+
+<input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="Qume você está procurando?" ng-model-options="{updateOn: 'default blur', debounce: {default: 200, blur: 0}}"/>
+<div class="panel panel-default panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><a ng-click="ordernarPor('cliente.nome')">Nome</a></th>
+        <th><a ng-click="ordernarPor('cliente.telefone')">Telefone</a></th>
+        <th><a ng-click="ordernarPor('cliente.email')">E-mail</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="cliente in clientes | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao"
+      ng-mouseover="cliente.show = true" ng-mouseout="cliente.show = false">
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.telefone}}</td>
+        <td>{{cliente.email}}</td>
+        <td><button ng-show="cliente.show" ng-click="cadastrarAcompanhamento(cliente)" class="btn btn-primary">Cadastrar acompnhamento</button></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>

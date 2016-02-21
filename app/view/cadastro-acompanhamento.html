@@ -8,7 +8,9 @@
       <div class="col-sm-12">
         <input class="form-control" placeholder="Modelo" ng-model="acompanhamento.modelo" type="text"></input>
         <input class="form-control" placeholder="Placa" ng-model="acompanhamento.placa" type="text"></input>
-        <autocomplete ng-model="acompanhamento.cliente" data="clientes"  on-select="handleOnselect"></autocomplete>
+        <autocomplete autocompleteRequired="true" ng-model="cliente" data="clientes" on-select="selecionarCliente">
+
+        </autocomplete>
       </div>
       <div class="col-sm-4">
         <input class="form-control" type="date" name="input" ng-model="acompanhamento.dataCompra"
@@ -28,7 +30,7 @@
   </form>
 
   <div class="actions">
-    <a>Cancelar</a>
+    <a ng-click="cancelar()">Cancelar</a>
     <button class="btn btn-primary" type="button" ng-click="cadastrarAcompanhamento(acompanhamento)">Cadastrar</button>
   </div>
 
