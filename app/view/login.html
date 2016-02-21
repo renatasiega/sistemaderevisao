@@ -1,14 +1,12 @@
 <main ng-controller="loginCtrl" class="userLogin">
 
-	<p class="bg-danger">Login ou senha incorretos ;(</p>
-
 	<div class="panel panel-default loginPanel">
 		<div class="panel-body">
 			<section class="box login cf">
 				<form class="form-horizontal">
 					<div class="form-group">
 						<div class="col-sm-12">
-							<input type="text" class="form-control" placeholder="Username" ng-model="credentials.username" ng-class="{'error': config.submitted && !config.validmail}">
+							<input value="admin" type="text" class="form-control" placeholder="Username" ng-model="credentials.login" ng-class="{'error': config.submitted && !config.validmail}"/>
 						</div>
 					</div>
 					<div class="form-group">

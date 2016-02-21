@@ -32,5 +32,4 @@ angular.module("sistemDeRevisao").controller("cadastroAcompanhamentoCtrl", funct
     return c;
   }
 
-
 });

@@ -6,7 +6,6 @@ angular.module("sistemDeRevisao").controller("acompanhamentosCtrl", function ($s
     acompanhamentoService.edit(acompanhamento);
   }
 
-
   $scope.isLate = function (acompanhamento) {
     return (!acompanhamento.agendado && (new Date() >= acompanhamento.dataRevisao));
   }

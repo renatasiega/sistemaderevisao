@@ -13,12 +13,11 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
 
   var somarMeses = function(d, meses){
     var data = new Date(d.getFullYear(), d.getMonth(), d.getDate());
-    //console.log("data: " + data + " meses: " + meses);
     var diaAtual = data.getDate();
     var mesAtual = data.getMonth();
     if (meses < 12){
       if (diaAtual > 28){
-        data.setDate(28); //menor esforco possivel neste caso
+        data.setDate(28);
       }
     }
     if (mesAtual + meses <= 11){
@@ -27,7 +26,6 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
       intAnos = meses / 12;
       data.setFullYear(data.getFullYear()+ intAnos);
     }
-    //console.log("saida: " + data);
     return data;
   };
 
@@ -50,18 +48,11 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
   _save = function (b){
 
     for (var i = 0; i < b.periodos.length; i++){
-      console.log("data Compra: " + b.dataCompra);
       var futuro = somarMeses(b.dataCompra, b.periodos[i]);
-      console.log(futuro);
       var novo = acompanhamento (b.modelo, b.placa, new Date(futuro.getFullYear(), futuro.getMonth(), futuro.getDate()), false, b.cliente);
       acompanhamentos.push(novo);
     }
 
-    // b.periodos.forEach(function(valor, chave){
-    //   console.log();
-    //   var novo =  acompanhamento (b.modelo, b.placa, somarMeses(b.dataCompra, valor), false, b.cliente);
-    //   acompanhamentos.push(novo);
-    // });
   }
 
   _get = function (placa, data) {
@@ -74,7 +65,6 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
 
   _edit = function (c) {
     var edited = _get(c.placa, c.dataRevisao);
-    console.log(edited.agendado + " " + c.agendado);
     edited.agendado = c.agendado;
   }
 
