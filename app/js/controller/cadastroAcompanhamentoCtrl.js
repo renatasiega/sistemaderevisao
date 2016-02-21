@@ -1,4 +1,4 @@
-angular.module("sistemDeRevisao").controller("cadastroAcompanhamentoCtrl", function ($scope, $location, clienteService){
+angular.module("sistemDeRevisao").controller("cadastroAcompanhamentoCtrl", function ($scope, $location, clienteService, acompanhamentoService){
 
   $scope.map = new Map();
   $scope.clientes = toString(clienteService.getAll());
@@ -11,8 +11,7 @@ angular.module("sistemDeRevisao").controller("cadastroAcompanhamentoCtrl", funct
   };
 
   $scope.cadastrarAcompanhamento = function (acompanhamento) {
-    $scope.acompanhamentos.push(acompanhamento);
-    console.log($scope.acompanhamentos);
+    acompanhamentoService.save(acompanhamento);
     $location.path("/");
   };
 

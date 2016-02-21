@@ -20,5 +20,10 @@ angular.module("sistemDeRevisao").config(function($routeProvider){
      controller: "cadastroAcompanhamentoCtrl"
    });
 
+  //  $routeProvider.when("/login", {
+  //    templateUrl: "view/login.html",
+  //    controller: "c"
+  //  });
+
    $routeProvider.otherwise({redirectTo: "/"});
 });

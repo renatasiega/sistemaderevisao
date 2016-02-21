@@ -10,4 +10,8 @@ angular.module("sistemDeRevisao").controller("clientesCtrl", function ($scope, $
     $location.path("/cadastro-acompanhamento");
   };
 
+  $scope.cancelar = function (){
+    $location.path("/");
+  }
+
 });

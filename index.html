@@ -17,6 +17,7 @@
 <script src="js/controller/clientesCtrl.js"></script>
 <script src="js/controller/acompanhamentosCtrl.js"></script>
 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.0/bootstrap.min.js"></script>
 <script src="js/directives/autocomplete/autocomplete.js"></script>
 <script src="js/services/clienteService.js"></script>
 <script src="js/services/acompanhamentoService.js"></script>
@@ -25,6 +26,22 @@
 
 </head>
     <body>
-      <div ng-view></div>
+      <div class="mainHeader">
+      	<h1 class="logo">
+      		<strong class="vhide">Revisão</strong>
+      	</h1><!-- End .logo -->
+      	<aside class="userActions cf">
+      		<div class="dropdown">
+      		  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      		    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+      		    <span class="caret"></span>
+      		  </button>
+      		  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+      		    <li><a href="#" ng-click="logout">Sair</a></li>
+      		  </ul>
+      	</div>
+      	</aside><!-- End .userActions -->
+      </div><!-- End .mainHeader -->
+      <div ng-view class='mainDiv'></div>
     </body>
 </html>

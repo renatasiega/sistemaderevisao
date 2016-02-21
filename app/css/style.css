@@ -18,6 +18,61 @@ body {
   cursor: pointer;
 }
 
+.mainAction {
+  margin: auto;
+  width: 490px;
+  margin-bottom: 25px;
+}
+
+/******************************************************************************/
+/* .header */
+/******************************************************************************/
+.mainHeader {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	border-bottom: 1px solid rgba(0,0,0, 0.3);
+	background-color: rgba(255,255,255, 1);
+	box-shadow: 0 0 5px rgba(0,0,0, 0.4);
+	z-index: 50;
+  height: 65px;
+}
+
+.mainHeader .logo {
+	float: left;
+	margin: 0 25px;
+  margin-top: 6px;
+}
+
+.mainHeader .mainNav {
+	float: left;
+	position: relative;
+	top: 23px;
+}
+
+/******************************************************************************/
+/* .mainNav */
+/******************************************************************************/
+.mainNav a {display: inline-block;}
+
+.mainNav a:not(:last-child) {
+	padding-right: 10px;
+	border-right: 1px solid rgba(0,0,0, 1);
+	margin-right: 10px;
+}
+
+/******************************************************************************/
+/* .userActions */
+/******************************************************************************/
+.userActions {
+	position: absolute;
+	top: 12px;
+	right: 25px;
+}
+
+.actions.cf {float: right;}
+
 /******************************************************************************/
 /* .clientePage */
 /******************************************************************************/
@@ -32,4 +87,8 @@ body {
 
 .clientePage .form-group{
   margin-bottom: 10px;
+}
+
+.mainDiv {
+  margin-top: 100px;
 }

@@ -14,12 +14,17 @@
     <tbody>
       <tr ng-repeat="cliente in clientes | filter:criterioDeBusca | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao"
       ng-mouseover="cliente.show = true" ng-mouseout="cliente.show = false">
-        <td>{{cliente.nome}}</td>
-        <td>{{cliente.telefone}}</td>
-        <td>{{cliente.email}}</td>
-        <td><button ng-show="cliente.show" ng-click="cadastrarAcompanhamento(cliente)" class="btn btn-primary">Cadastrar acompnhamento</button></td>
+        <td class="col-md-3">{{cliente.nome}}</td>
+        <td class="col-md-3">{{cliente.telefone}}</td>
+        <td class="col-md-3">{{cliente.email}}</td>
+        <td class="col-md-3"><button ng-show="cliente.show" ng-click="cadastrarAcompanhamento(cliente)" class="btn btn-primary">Cadastrar acompnhamento</button></td>
       </tr>
     </tbody>
     </table>
+
+    <div class="actions">
+      <a ng-click="cancelar()">Voltar</a>
+    </div>
+
   </div>
 </div>

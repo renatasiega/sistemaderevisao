@@ -1,23 +1,26 @@
-<a class="btn btn-primary" type="button" href="#/cadastro-cliente">Cadastrar Cliente</a>
-<a class="btn btn-primary" type="button" href="#/cadastro-acompanhamento">Cadastrar Acompanhamento</a>
-<a class="btn btn-primary" type="button" href="#/clientes">Listar Clientes</a>
-
 <div ng-controller="acompanhamentosCtrl">
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Data</th>
-    <th>Cliente</th>
-    <th>Modelo</th>
-    <th>Placa</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="acompanhamento in acompanhamentos">
-      <td>{{acompanhamento.dataCompra | date:'dd/MM/yyyy'}}</td>
-      <td>{{acompanhamento.cliente.nome}} {{acompanhamento.cliente.telefone}} {{acompanhamento.cliente.email}}</td>
-      <td>{{acompanhamento.modelo}}</td>
-      <td>{{acompanhamento.placa}}</td>
-  </tbody>
-</table>
+
+  <div class="mainAction">
+    <a class="btn btn-primary" type="button" href="#/cadastro-cliente">Cadastrar Cliente</a>
+    <a class="btn btn-primary" type="button" href="#/cadastro-acompanhamento">Cadastrar Acompanhamento</a>
+    <a class="btn btn-primary" type="button" href="#/clientes">Listar Clientes</a>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Data</th>
+      <th>Cliente</th>
+      <th>Modelo</th>
+      <th>Placa</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="acompanhamento in acompanhamentos">
+        <td>{{acompanhamento.dataCompra | date:'dd/MM/yyyy'}}</td>
+        <td>{{acompanhamento.cliente.nome}} {{acompanhamento.cliente.telefone}} {{acompanhamento.cliente.email}}</td>
+        <td>{{acompanhamento.modelo}}</td>
+        <td>{{acompanhamento.placa}}</td>
+    </tbody>
+  </table>
 </div>
