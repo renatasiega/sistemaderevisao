@@ -9,18 +9,20 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>Data</th>
+      <th>Data Revisão</th>
       <th>Cliente</th>
       <th>Modelo</th>
       <th>Placa</th>
+      <th>Agendado</th>
     </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="acompanhamento in acompanhamentos">
-        <td>{{acompanhamento.dataCompra | date:'dd/MM/yyyy'}}</td>
+      <tr ng-repeat="acompanhamento in acompanhamentos | orderBy:'dataRevisao'" ng-class="{'agendado': acompanhamento.agendado, 'atrasado': isLate(acompanhamento)}">
+        <td>{{acompanhamento.dataRevisao | date:'dd/MM/yyyy'}}</td>
         <td>{{acompanhamento.cliente.nome}} {{acompanhamento.cliente.telefone}} {{acompanhamento.cliente.email}}</td>
         <td>{{acompanhamento.modelo}}</td>
         <td>{{acompanhamento.placa}}</td>
+        <td><input type="checkbox" ng-model="acompanhamento.agendado" ng-click="agendar(acompanhamento)"></input>
     </tbody>
   </table>
 </div>
