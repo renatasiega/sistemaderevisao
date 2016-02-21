@@ -6,10 +6,6 @@ angular.module("sistemDeRevisao").controller("clientesCtrl", function ($scope, $
     $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
   };
 
-  $scope.cadastrarAcompanhamento = function(){
-    $location.path("/cadastro-acompanhamento");
-  };
-
   $scope.cancelar = function (){
     $location.path("/");
   }

@@ -11,33 +11,8 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
     return a;
   }
 
-  var voltarMeses = function(dataNova, meses){
-    var hoje = dataNova;
-    console.log("hoje: " + hoje + " meses: " + meses);
-    var diaAtual = hoje.getDate();
-    if (diaAtual > 28){
-      hoje.setDate(28); //menor esforco possivel neste caso
-    }
-    var mesAtual = hoje.getMonth();
-    if (mesAtual >= meses){
-      hoje.setMonth(mesAtual - meses);
-    } else {
-      var anoAtual = hoje.getFullYear();
-      if (meses <= 11){
-        hoje.setMonth(mesAtual + 12 - meses);
-        hoje.setFullYear(anoAtual - 1);
-      } else {
-        hoje.setMonth(mesAtual + 12 - meses);
-        var intAnos = Math.floor(meses / 12);
-        hoje.setFullYear(anoAtual - 1 - intAnos);
-      }
-    }
-    console.log("saidas voltar: " + hoje);
-    return hoje;
-  };
-
   var somarMeses = function(d, meses){
-    var data = d;
+    var data = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     //console.log("data: " + data + " meses: " + meses);
     var diaAtual = data.getDate();
     var mesAtual = data.getMonth();
@@ -57,29 +32,15 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
   };
 
   var acompanhamentos = [
-          acompanhamento("K", "MKV1080", somarMeses(new Date(), 6), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
-          acompanhamento("K", "MKV1080", somarMeses(new Date(), 12), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
-          acompanhamento("K", "MKV1080", somarMeses(new Date(), 24), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
-          acompanhamento("K", "MKV1080", somarMeses(new Date(), 36), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
-          acompanhamento("K", "MKV1080", somarMeses(new Date(), 48), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
-          acompanhamento("K", "MKV1080", somarMeses(new Date(), 60), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
+          acompanhamento("K", "MKV1080", new Date(2016,07,21), false, {nome: "Renata", telefone: "9999-8888", email:"teste@mail.com"}),
 
-          acompanhamento("Fiesta", "MLV1100", somarMeses(voltarMeses(new Date(),11), 6), false, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
-          acompanhamento("Fiesta", "MLV1100", somarMeses(voltarMeses(new Date(),11), 12), true, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
-          acompanhamento("Fiesta", "MLV1100", somarMeses(voltarMeses(new Date(),11), 24), false, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
-          acompanhamento("Fiesta", "MLV1100", somarMeses(voltarMeses(new Date(),11), 36), false, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
-          acompanhamento("Fiesta", "MLV1100", somarMeses(voltarMeses(new Date(),11), 48), false, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
+          acompanhamento("Fiesta", "MLV1100", new Date(2016,01,20), true, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
+          acompanhamento("Fiesta", "MLV1100", new Date(2017,01,20), false, {nome: "Marina", telefone: "9999-7777", email: "teste1@mail.com"}),
 
-          acompanhamento("EcoSport", "PPO0909", somarMeses(voltarMeses(new Date(),23), 12), true, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
-          acompanhamento("EcoSport", "PPO0909", somarMeses(voltarMeses(new Date(),23), 24), false, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
-          acompanhamento("EcoSport", "PPO0909", somarMeses(voltarMeses(new Date(),23), 36), false, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
-          acompanhamento("EcoSport", "PPO0909", somarMeses(voltarMeses(new Date(),23), 48), false, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
-          acompanhamento("EcoSport", "PPO0909", somarMeses(voltarMeses(new Date(),23), 60), false, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
+          acompanhamento("EcoSport", "PPO0909", new Date(2016,05,06), false, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
+          acompanhamento("EcoSport", "PPO0909", new Date(2017,05,06), false, {nome: "Carina", telefone:   "9999-6666", email: "teste2@mail.com"}),
 
-          acompanhamento("Focus", "LHA3495", somarMeses(voltarMeses(new Date(),5), 12), false, {nome: "Pristina", telefone:  "9999-5555", email: "teste3@mail.com"}),
-          acompanhamento("Focus", "LHA3495", somarMeses(voltarMeses(new Date(),5), 24), false, {nome: "Pristina", telefone:  "9999-5555", email: "teste3@mail.com"}),
-          acompanhamento("Focus", "LHA3495", somarMeses(voltarMeses(new Date(),5), 36), false, {nome: "Pristina", telefone:  "9999-5555", email: "teste3@mail.com"}),
-          acompanhamento("Focus", "LHA3495", somarMeses(voltarMeses(new Date(),5), 48), false, {nome: "Pristina", telefone:  "9999-5555", email: "teste3@mail.com"})
+          acompanhamento("Focus", "LHA3495", new Date(2016,01,10), false, {nome: "Pristina", telefone:  "9999-5555", email: "teste3@mail.com"})
       ];
 
   _getAll = function (){
@@ -87,10 +48,20 @@ angular.module("sistemDeRevisao").factory("acompanhamentoService", function () {
   }
 
   _save = function (b){
-    b.periodos.forEach(function(valor, chave){
-      var novo =  acompanhamento (b.modelo, b.placa, somarMeses(b.dataCompra, valor), false, b.cliente);
+
+    for (var i = 0; i < b.periodos.length; i++){
+      console.log("data Compra: " + b.dataCompra);
+      var futuro = somarMeses(b.dataCompra, b.periodos[i]);
+      console.log(futuro);
+      var novo = acompanhamento (b.modelo, b.placa, new Date(futuro.getFullYear(), futuro.getMonth(), futuro.getDate()), false, b.cliente);
       acompanhamentos.push(novo);
-    });
+    }
+
+    // b.periodos.forEach(function(valor, chave){
+    //   console.log();
+    //   var novo =  acompanhamento (b.modelo, b.placa, somarMeses(b.dataCompra, valor), false, b.cliente);
+    //   acompanhamentos.push(novo);
+    // });
   }
 
   _get = function (placa, data) {
