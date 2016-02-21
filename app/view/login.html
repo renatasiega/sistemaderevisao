@@ -1,0 +1,27 @@
+<main ng-controller="loginCtrl" class="userLogin">
+
+	<p class="bg-danger">Login ou senha incorretos ;(</p>
+
+	<div class="panel panel-default loginPanel">
+		<div class="panel-body">
+			<section class="box login cf">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" placeholder="Username" ng-model="credentials.username" ng-class="{'error': config.submitted && !config.validmail}">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="password" class="form-control" placeholder="Password" ng-model="credentials.password" ng-class="{'error': config.submitted && !config.validpassword}">
+						</div>
+					</div>
+					<div class="actions cf">
+						<button type="button" class="button" tabindex="3" ng-click="login(credentials)">Login</button>
+					</div><!-- End .actions -->
+				</form>
+			</section><!-- End .box.login -->
+		</div>
+	</div>
+
+</main><!-- End .userLogin -->

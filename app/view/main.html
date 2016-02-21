@@ -17,8 +17,13 @@
     </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
       <tr ng-repeat="acompanhamento in acompanhamentos | orderBy:'dataRevisao'" ng-class="{'agendado': acompanhamento.agendado, 'atrasado': isLate(acompanhamento)}">
         <td>{{acompanhamento.dataRevisao | date:'dd/MM/yyyy'}}</td>
+=======
+      <tr ng-repeat="acompanhamento in acompanhamentos | orderBy: 'dataCompra'">
+        <td>{{acompanhamento.dataCompra | date:'dd/MM/yyyy'}}</td>
+>>>>>>> origin/master
         <td>{{acompanhamento.cliente.nome}} {{acompanhamento.cliente.telefone}} {{acompanhamento.cliente.email}}</td>
         <td>{{acompanhamento.modelo}}</td>
         <td>{{acompanhamento.placa}}</td>
