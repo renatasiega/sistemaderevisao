@@ -7,4 +7,8 @@ angular.module("sistemDeRevisao").controller("cadastroClienteCtrl", function ($s
     $location.path("/");
   };
 
+  $scope.cancelar = function (){
+    $location.path("/");
+  }
+
 });
