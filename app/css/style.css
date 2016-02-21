@@ -1,9 +1,35 @@
 body {
   width: 1024px;
-  margin: auto;
+  margin: auto!important;
 }
 
 .form-control {
   margin-bottom: 5px;
   margin-top: 5px;
+}
+
+.actions {
+  float: right;
+  margin-top: 15px;
+}
+
+.actions a {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/******************************************************************************/
+/* .clientePage */
+/******************************************************************************/
+.clientePage{
+  width: 600px;
+  margin: auto;
+}
+
+.clientePage h2{
+  margin-bottom: 30px;
+}
+
+.clientePage .form-group{
+  margin-bottom: 10px;
 }
