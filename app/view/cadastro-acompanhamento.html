@@ -20,7 +20,7 @@
       </div>
       <div class="col-sm-4">
         <input class="form-control" type="date" name="input" ng-model="acompanhamento.dataCompra"
-            placeholder="Data" />
+            placeholder="Data"/>
         </input>
       </div>
       <div class="form-group col-sm-8">
@@ -37,7 +37,7 @@
 
   <div class="actions">
     <a ng-click="cancelar()">Cancelar</a>
-    <button class="btn btn-primary" type="button" ng-click="cadastrarAcompanhamento(acompanhamento)">Cadastrar</button>
+    <button class="btn btn-primary" type="button" ng-click="cadastrarAcompanhamento(acompanhamento)" ng-disabled="acompanhamentoForm.$invalid">Cadastrar</button>
   </div>
 
   </form>
