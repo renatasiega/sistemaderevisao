@@ -1,6 +1,7 @@
-angular.module("sistemDeRevisao").controller("cadastroClienteCtrl", function ($scope, $location){
+angular.module("sistemDeRevisao").controller("cadastroClienteCtrl", function ($scope, $location, clienteService){
 
-  $scope.clientes = [];
+  $scope.clientes = clienteService.getAll();
+
   $scope.cadastrarCliente = function (cliente) {
     $scope.clientes.push(cliente);
     console.log($scope.clientes);
